@@ -1,23 +1,20 @@
 {
-  "name": "babel-env-boilerplate",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-watch": "^2.0.7",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "graphql": "^14.0.2",
+    "rimraf": "^2.6.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ &&  babel src -d dist --source-map",
     "start": "babel-watch --watch src src/",
     "prod": "npm run build && node dist/"
-  },
-  "dependencies": {
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "babel-watch": "^2.0.7",
-    "dotenv": "^5.0.1",
-    "rimraf": "^2.6.2"
   }
 }
