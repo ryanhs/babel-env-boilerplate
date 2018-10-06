@@ -1,5 +1,11 @@
 {
-  "plugins": ["transform-object-rest-spread"],
+  "plugins": [
+    "transform-object-rest-spread",
+    "inline-dotenv",
+    ["module-resolver", {
+      "root": ["./src"],
+    }],
+  ],
   "presets": [
     ["env", {
       "targets": {
