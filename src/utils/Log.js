@@ -5,11 +5,11 @@ var streams = [];
     streams.push({ stream: process.stdout })
 
 // push to elasticsearch if enabled
-if (process.env['APP_LOG_EL'] === 'true') {
+if (process.env['APP_LOG_ES'] === 'true') {
   var esStream = new Elasticsearch({
     indexPattern: '[' + (process.env.APP_NAME) + ']YYYY.MM.DD',
     type: 'logs',
-    host: process.env.APP_LOG_EL_HOST + ':' + process.env.APP_LOG_EL_PORT
+    host: process.env.APP_LOG_ES_HOST + ':' + process.env.APP_LOG_ES_PORT
   });
   esStream.on('error', (err) => console.log('Elasticsearch Stream Error:', err.stack));
   streams.push({ stream: esStream })
