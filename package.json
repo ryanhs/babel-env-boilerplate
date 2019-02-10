@@ -14,7 +14,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ &&  babel src -d dist --source-map",
-    "start": "babel-watch --watch src src/",
+    "start": "babel-watch --watch src src/ | bunyan -o short",
     "prod": "npm run build && node dist/"
   }
 }
