@@ -20,8 +20,9 @@ if (process.env.NODE_ENV === 'production') level = 'info';
 if (process.env.NODE_ENV === 'staging') level = 'debug';
 if (process.env.NODE_ENV === 'development') level = 'trace';
 
+
 var log = bunyan.createLogger({
-  name: (process.env.APP_NAME),
+  name: process.env.APP_NAME || '-',
   streams: streams,
   serializers: bunyan.stdSerializers,
   level: level

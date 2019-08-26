@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "apollo-server-express": "^2.4.0",
+    "azure-storage": "^2.10.3",
     "babel-cli": "^6.26.0",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-module-resolver": "^3.1.1",
@@ -7,9 +9,29 @@
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "babel-watch": "^2.0.7",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.19.0",
     "bunyan": "^1.8.12",
     "bunyan-elasticsearch": "^1.0.1",
-    "rimraf": "^2.6.2"
+    "cache-manager": "^2.9.0",
+    "cache-manager-redis-store": "^1.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "graphql": "^14.1.1",
+    "graphql-yoga": "^1.17.4",
+    "helmet": "^3.15.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "mysql2": "^1.6.5",
+    "nocache": "^2.0.0",
+    "node-rsa": "^1.0.5",
+    "redis": "^2.8.0",
+    "redlock": "^3.1.2",
+    "rimraf": "^2.6.2",
+    "sql-tag": "^1.0.1",
+    "superagent": "^5.0.5",
+    "svg-captcha": "^1.4.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
