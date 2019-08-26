@@ -23,5 +23,5 @@ const bootstrap = async () => {
 }
 
 bootstrap()
-  .then(() => log.info(global.configs, 'App open: ' + timeGuard()))
+  // .then(() => log.info('App open: ' + timeGuard()))
   .catch(error => log.error("fatal error!", error))

@@ -24,6 +24,7 @@ const bootstrap = async () => {
     queueLimit: 0,
     Promise
   }).promise();
+  global.data.mysql.on('connection', () => log.info('Mysql connected!'));
 
   // redis
   Promise.promisifyAll(Redis.RedisClient.prototype)
