@@ -16,7 +16,7 @@ import { timeGuard } from 'guards/time';
 const bootstrap = async () => {
   await Promise.all([
     dataBootstrap(),
-    blobStorageBoostrap(),
+    process.env.APP_ACTIVE_AZURE == true ? blobStorageBoostrap() : log.info('Blob Storage Offline'),
   ]);
 
   httpListener.listen();
