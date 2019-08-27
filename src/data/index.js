@@ -27,8 +27,8 @@ const bootstrap = async () => {
   global.data.mysql.on('connection', () => log.info('Mysql connected!'));
 
   // redis
+  if (process.env.APP_ACTIVE_REDIS == true) {
   Promise.promisifyAll(Redis.RedisClient.prototype)
-  if(process.env.APP_ACTIVE_REDIS == true) {
   Promise.promisifyAll(Redis.Multi.prototype)
   global.data.redis = Redis.createClient({
     host: process.env.APP_REDIS_HOSTNAME,
@@ -38,11 +38,9 @@ const bootstrap = async () => {
   })
   global.data.redisRedlock = new Redlock([global.data.redis]);
   global.data.redis.onAsync('connect').then(() => log.info('Redis connected!'))
-  } else {
-    log.info('Redis Offline')
-  }
-  
+
   return global.data;
+  }
 }
 
 const getRedis = () => global.data.redis;
