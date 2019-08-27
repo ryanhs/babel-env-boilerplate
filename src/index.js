@@ -12,11 +12,15 @@ import { bootstrap as blobStorageBoostrap } from 'data/blobStorage';
 // guards
 import { timeGuard } from 'guards/time';
 
+let bootstrapMap = [];
+
+bootstrapMap.push(dataBootstrap());
+if (process.env.APP_ACTIVE_AZURE == true) bootstrapMap.push(blobStorageBoostrap());
+
 // bootstrap
 const bootstrap = async () => {
   await Promise.all([
-    dataBootstrap(),
-    blobStorageBoostrap(),
+    bootstrapMap
   ]);
 
   httpListener.listen();

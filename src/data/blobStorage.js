@@ -7,9 +7,7 @@ import log from 'utils/Log';
 var blobService = null;
 
 const bootstrap = () => {
-  if (process.env.APP_ACTIVE_AZURE == true) {
-    blobService = azureStorage.createBlobService(process.env.APP_AZURE_STORAGE_ACCOUNT, process.env.APP_AZURE_STORAGE_ACCESS_KEY);
-  }
+  blobService = azureStorage.createBlobService(process.env.APP_AZURE_STORAGE_ACCOUNT, process.env.APP_AZURE_STORAGE_ACCESS_KEY);
 }
 
 const getContent = (file) => new Promise((resolve, reject) => {
