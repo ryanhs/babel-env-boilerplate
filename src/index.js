@@ -19,9 +19,7 @@ if (process.env.APP_ACTIVE_AZURE == true) bootstrapMap.push(blobStorageBoostrap(
 
 // bootstrap
 const bootstrap = async () => {
-  await Promise.all([
-    bootstrapMap
-  ]);
+  await Promise.all(bootstrapMap);
 
   httpListener.listen();
 }
