@@ -16,8 +16,8 @@ import { timeGuard } from 'guards/time';
 const bootstrap = async () => {
   let bootstrapMap = [];
   bootstrapMap.push(dataBootstrap());
-  if (process.env.APP_ACTIVE_AZURE == true) bootstrapMap.push(blobStorageBoostrap());
-  
+  if (process.env.APP_ACTIVE_AZURE === '1') bootstrapMap.push(blobStorageBoostrap());
+
   await Promise.all(bootstrapMap);
 
   httpListener.listen();

@@ -27,7 +27,7 @@ const bootstrap = async () => {
   global.data.mysql.on('connection', () => log.info('Mysql connected!'));
 
   // redis
-  if (process.env.APP_ACTIVE_REDIS == true) {
+  if (process.env.APP_ACTIVE_REDIS === '1') {
   Promise.promisifyAll(Redis.RedisClient.prototype)
   Promise.promisifyAll(Redis.Multi.prototype)
   global.data.redis = Redis.createClient({
