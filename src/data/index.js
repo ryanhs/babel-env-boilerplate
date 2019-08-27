@@ -28,19 +28,19 @@ const bootstrap = async () => {
 
   // redis
   if (process.env.APP_ACTIVE_REDIS === '1') {
-  Promise.promisifyAll(Redis.RedisClient.prototype)
-  Promise.promisifyAll(Redis.Multi.prototype)
-  global.data.redis = Redis.createClient({
-    host: process.env.APP_REDIS_HOSTNAME,
-    user: process.env.APP_REDIS_USERNAME,
-    password: process.env.APP_REDIS_PASSWORD,
-    db: process.env.APP_REDIS_DB,
-  })
-  global.data.redisRedlock = new Redlock([global.data.redis]);
-  global.data.redis.onAsync('connect').then(() => log.info('Redis connected!'))
+    Promise.promisifyAll(Redis.RedisClient.prototype)
+    Promise.promisifyAll(Redis.Multi.prototype)
+    global.data.redis = Redis.createClient({
+      host: process.env.APP_REDIS_HOSTNAME,
+      user: process.env.APP_REDIS_USERNAME,
+      password: process.env.APP_REDIS_PASSWORD,
+      db: process.env.APP_REDIS_DB,
+    })
+    global.data.redisRedlock = new Redlock([global.data.redis]);
+    global.data.redis.onAsync('connect').then(() => log.info('Redis connected!'))
+  }
 
   return global.data;
-  }
 }
 
 const getRedis = () => global.data.redis;
